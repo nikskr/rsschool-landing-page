@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Coffee House</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <a class="logo" href="/index.html"></a>
+        <nav>
+          <ul>
+            <li>
+              <a class="link nav-link" href="#favorite-coffee"
+                >Favorite coffee</a
+              >
+            </li>
+            <li><a class="link nav-link" href="#about">About</a></li>
+            <li><a class="link nav-link" href="#mobile-app">Mobile app</a></li>
+            <li><a class="link nav-link" href="#contact-us">Contact us</a></li>
+          </ul>
+        </nav>
+        <button id="toggle-theme-btn" class="light-mode-switch">
+          <span class="mode-btn light-mode">
+            <img
+              class="svg light-img"
+              src="./assets/icons/sun.svg"
+              alt="Light-mode"
+            />
+          </span>
+          <span class="mode-btn dark-mode">
+            <img
+              class="svg moon-img"
+              src="./assets/icons/moon.svg"
+              alt="Dark-mode"
+            />
+          </span>
+        </button>
+        <div class="menu-item">
+          <a class="link menu-link" href="./menu.html">
+            <span>Menu</span>
+            <img
+              class="menu-item-icon"
+              src="./assets/icons/coffee-cup.svg"
+              alt="Coffe-icon"
+            />
+          </a>
+        </div>
+        <button id="burger">
+          <img
+            class="burger-menu-img"
+            src="./assets/icons/burger-menu.svg"
+            alt="Burger-menu"
+          />
+        </button>
+      </header>
+      <main>
+        <section class="hero-section">
+          <video class="hero-video" autoplay muted loop width="100">
+            <source src="./assets/videos/hero-video.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-content">
+            <h1 class="heading-1">
+              <span class="accent">Enjoy</span> premium coffee at our charming
+              cafe
+            </h1>
+            <p>
+              With its inviting atmosphere and delicious coffee options, the
+              Coffee House Resource is a popular destination for coffee lovers
+              and those seeking a warm and inviting space to enjoy their
+              favorite beverage.
+            </p>
+            <a class="link hero-link" href="./menu.html">
+              <span>Menu</span>
+              <img
+                class="menu-item-icon hero-link-icon"
+                src="./assets/icons/coffee-cup.svg"
+                alt="Coffe-icon"
+              />
+            </a>
+          </div>
+        </section>
+        <section id="favorite-coffee">
+          <h2 class="heading-2">
+            Choose your <span class="accent">favorite</span> coffee
+          </h2>
+          <div class="slider-container">
+            <div class="slider">
+              <div>
+                <button class="button slider-btn">
+                  <img
+                    class="svg slider-arrow-img"
+                    src="./assets/icons/arrow-left.svg"
+                    alt="Previous-product"
+                  />
+                </button>
+              </div>
+              <div class="slides-container">
+                <!-- <div class="slide">
+                  <img class="slide-img" src="" alt="Coffee" />
+                  <h3 class="heading-3">S`mores Frappuccino</h3>
+                  <p>
+                    This new drink takes an espresso and mixes it with brown
+                    sugar and cinnamon before being topped with oat milk.
+                  </p>
+                  <h3 class="heading-3">$5.50</h3>
+                </div> -->
+                <div class="slide active">
+                  <img src="./assets/images/coffee-slider-1.png" alt="Coffee" />
+                  <h3 class="heading-3">S`mores Frappuccino</h3>
+                  <p>
+                    This new drink takes an espresso and mixes it with brown
+                    sugar and cinnamon before being topped with oat milk.
+                  </p>
+                  <h3 class="heading-3">$5.50</h3>
+                </div>
+                <!-- <div class="slide">
+                  <img src="" alt="Coffee" />
+                  <h3 class="heading-3">Coffe name</h3>
+                  <p>Description</p>
+                  <h3 class="heading-3">Price</h3>
+                </div> -->
+              </div>
+              <div class="slider-btn-container">
+                <button class="button slider-btn">
+                  <img
+                    class="svg slider-arrow-img"
+                    src="./assets/icons/arrow-right.svg"
+                    alt="Next-product"
+                  />
+                </button>
+              </div>
+            </div>
+            <div class="slider-pagination">
+              <div class="dash active"></div>
+              <div class="dash"></div>
+              <div class="dash"></div>
+            </div>
+          </div>
+        </section>
+        <section id="about">
+          <h2 class="heading-2">
+            Resource is <span class="accent">the perfect and cozy place</span>
+            where you can enjoy a variety of hot beverages, relax, catch up with
+            friends, or get some work done.
+          </h2>
+          <div class="about-img-container">
+            <img
+              class="about-img"
+              src="./assets/images/box-1.png"
+              alt="Satisfied-customer"
+            />
+            <img
+              class="about-img"
+              src="./assets/images/box-2.png"
+              alt="Busy-client"
+            />
+            <img
+              class="about-img"
+              src="./assets/images/box-3.png"
+              alt="Evening-atmosphere"
+            />
+            <img
+              class="about-img"
+              src="./assets/images/box-4.png"
+              alt="A-couple-in-love-with-coffee"
+            />
+          </div>
+        </section>
+        <section id="mobile-app" class="download-section">
+          <div class="download-content">
+            <div class="download-container">
+              <h2 class="heading-2">
+                <span class="accent">Download</span> our app to start ordering
+              </h2>
+              <p>
+                Download the Resource app today and experience the comfort of
+                ordering your favorite coffee from wherever you are
+              </p>
+              <ul class="download-link-list">
+                <li class="download-link-item">
+                  <a
+                    class="link download-link"
+                    href="https://www.apple.com"
+                    target="_blank"
+                  >
+                    <img
+                      class="download-link-icon"
+                      src="./assets/icons/icon-app-store.svg"
+                      alt="App-store-icon"
+                    />
+                    <div>
+                      <span class="caption">Available on the<br /></span>
+                      <p>App Store</p>
+                    </div>
+                  </a>
+                </li>
+                <li class="download-link-item">
+                  <a
+                    class="link download-link"
+                    href="https://play.google.com"
+                    target="_blank"
+                  >
+                    <img
+                      class="download-link-icon"
+                      src="./assets/icons/icon-google-play.svg"
+                      alt="Google-play-icon"
+                    />
+                    <div>
+                      <span class="caption">Available on<br /></span>
+                      <p>Google Play</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <img
+              class="download-img"
+              src="./assets/images/mobile-screens.png"
+              alt="App-on-mobile"
+            />
+          </div>
+        </section>
+      </main>
+      <footer id="contact-us">
+        <div class="slogan-link-container">
+          <div class="slogan">
+            <h2 class="heading-2">
+              Sip, Savor, Smile.<br />
+              <span class="accent">It’s coffee time!</span>
+            </h2>
+          </div>
+          <div>
+            <ul class="social-link-list">
+              <li class="social-link-item">
+                <a class="social-link" href="https://x.com" target="_blank">
+                  <img
+                    class="svg social-link-img"
+                    src="./assets/icons/twitter.svg"
+                    alt="Twitter"
+                  />
+                </a>
+              </li>
+              <li class="social-link-item">
+                <a
+                  class="social-link"
+                  href="https://www.instagram.com"
+                  target="_blank"
+                >
+                  <img
+                    class="svg social-link-img"
+                    src="./assets/icons/instagram.svg"
+                    alt="Instagram"
+                  />
+                </a>
+              </li>
+              <li class="social-link-item">
+                <a
+                  class="social-link"
+                  href="https://www.facebook.com"
+                  target="_blank"
+                >
+                  <img
+                    class="svg social-link-img"
+                    src="./assets/icons/facebook.svg"
+                    alt="Facebook"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="contacts">
+          <h3 class="contacts-header heading-3">Contact us</h3>
+          <ul class="contact-list">
+            <li class="contact-item">
+              <a
+                class="link contact-item contact-link"
+                href="https://www.google.com/maps"
+                target="_blank"
+              >
+                <img
+                  class="svg contact-item-icon"
+                  src="./assets/icons/pin-alt.svg"
+                  alt="Location"
+                />
+                <p>8558 Green Rd., LA</p>
+              </a>
+            </li>
+            <li>
+              <a class="link contact-item contact-link" href="tel:">
+                <img
+                  class="svg contact-item-icon"
+                  src="./assets/icons/phone.svg"
+                  alt="Phone"
+                />
+                <p>+1 (603) 555-0123</p>
+              </a>
+            </li>
+            <li class="link contact-item">
+              <img
+                class="svg contact-item-icon"
+                src="./assets/icons/clock.svg"
+                alt="Clock"
+              />
+              <p>Mon–Sat: 9:00–23:00</p>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <!-- <div id="modal">
+      <div class="modal-container">
+        <div class="modal-content">
+          <img src="" alt="Product-image" />
+          <div class="modal-product-info">
+            <h4>Title</h4>
+            <p>Description</p>
+            <div class="product-size">
+              <p>Size</p>
+              <ul>
+                <li><input type="radio" name="size" id="ml-200" /></li>
+                <li><input type="radio" name="size" id="ml-300" /></li>
+                <li><input type="radio" name="size" id="ml-400" /></li>
+              </ul>
+            </div>
+            <div class="product-addictives">
+              <p>Size</p>
+              <ul>
+                <li><input type="radio" name="addictives" id="sugar" /></li>
+                <li><input type="radio" name="addictives" id="cinnamon" /></li>
+                <li><input type="radio" name="addictives" id="syrup" /></li>
+              </ul>
+            </div>
+            <div class="total-price-container">
+              <h4>Total:</h4>
+              <h4>Price</h4>
+            </div>
+            <hr />
+            <p>The cost is not final</p>
+            <button>Close</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <script src="script.js"></script>
+  </body>
+</html>

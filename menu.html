@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Coffee House</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <a class="logo" href="./index.html"></a>
+        <nav>
+          <ul>
+            <li>
+              <a class="link nav-link" href="./index.html#favorite-coffee"
+                >Favorite coffee</a
+              >
+            </li>
+            <li>
+              <a class="link nav-link" href="./index.html#about">About</a>
+            </li>
+            <li>
+              <a class="link nav-link" href="./index.html#mobile-app"
+                >Mobile app</a
+              >
+            </li>
+            <li><a class="link nav-link" href="#contact-us">Contact us</a></li>
+          </ul>
+        </nav>
+        <button id="toggle-theme-btn" class="light-mode-switch">
+          <span class="mode-btn light-mode">
+            <img
+              class="svg light-img"
+              src="./assets/icons/sun.svg"
+              alt="Light-mode"
+            />
+          </span>
+          <span class="mode-btn dark-mode">
+            <img
+              class="svg moon-img"
+              src="./assets/icons/moon.svg"
+              alt="Dark-mode"
+            />
+          </span>
+        </button>
+        <div class="menu-item">
+          <a class="link menu-link" href="./menu.html">
+            <span>Menu</span>
+            <img
+              class="menu-item-icon"
+              src="./assets/icons/coffee-cup.svg"
+              alt="Coffe-icon"
+            />
+          </a>
+        </div>
+        <button id="burger">
+          <img
+            class="burger-menu-img"
+            src="./assets/icons/burger-menu.svg"
+            alt="Burger-menu"
+          />
+        </button>
+      </header>
+      <main>
+        <section>
+          <h1 class="menu-header heading-1">
+            Behind each of our cups <br />
+            hides an
+            <span class="accent">amazing surprise</span>
+          </h1>
+          <div>
+            <ul class="tabs-list">
+              <li>
+                <button class="button menu-tab-btn active">
+                  <span class="menu-tab-icon-wrapper">
+                    <img
+                      class="menu-tab-icon"
+                      src="./assets/icons/coffee-tab.png"
+                      alt="coffee"
+                    />
+                  </span>
+                  <span class="menu-tab-text">Coffee</span>
+                </button>
+              </li>
+              <li>
+                <button class="button menu-tab-btn">
+                  <span class="menu-tab-icon-wrapper">
+                    <img
+                      class="menu-tab-icon"
+                      src="./assets/icons/tea-tab.png"
+                      alt="tea"
+                    />
+                  </span>
+                  <span class="menu-tab-text">Tea</span>
+                </button>
+              </li>
+              <li>
+                <button class="button menu-tab-btn">
+                  <span class="menu-tab-icon-wrapper">
+                    <img
+                      class="menu-tab-icon"
+                      src="./assets/icons/dessert-tab.png"
+                      alt="dessert"
+                    />
+                  </span>
+                  <span class="menu-tab-text">Dessert</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div class="products-container">
+            <ul class="products-list">
+              <li class="product-card">
+                <img
+                  class="product-img"
+                  src="./assets/images/coffee-1.jpg"
+                  alt="Product"
+                />
+                <div class="product-info">
+                  <h2 class="product-title">Irish coffee</h2>
+                  <p class="product-description">
+                    Fragrant black coffee with Jameson Irish whiskey and whipped
+                    milk
+                  </p>
+                  <h2 class="product-price">$7.00</h2>
+                </div>
+              </li>
+              <li class="product-card">
+                <img
+                  class="product-img"
+                  src="./assets/images/coffee-2.jpg"
+                  alt="Product"
+                />
+                <div class="product-info">
+                  <h2 class="product-title heading-3">Kahlua coffee</h2>
+                  <p class="product-description">
+                    Classic coffee with milk and Kahlua liqueur under a cap of
+                    frothed milk
+                  </p>
+                  <h3 class="product-price heading-3">$7.00</h3>
+                </div>
+              </li>
+              <li class="product-card">
+                <img
+                  class="product-img"
+                  src="./assets/images/coffee-3.jpg"
+                  alt="Product"
+                />
+                <div class="product-info">
+                  <h2 class="product-title heading-3">Honey raf</h2>
+                  <p class="product-description">
+                    Espresso with frothed milk, cream and aromatic honey
+                  </p>
+                  <h3 class="product-price heading-3">$5.50</h3>
+                </div>
+              </li>
+              <li class="product-card">
+                <img
+                  class="product-img"
+                  src="./assets/images/coffee-4.jpg"
+                  alt="Product"
+                />
+                <div class="product-info">
+                  <h2 class="product-title heading-3">Ice cappuccino</h2>
+                  <p class="product-description">
+                    Cappuccino with soft thick foam in summer version with ice
+                  </p>
+                  <h3 class="product-price heading-3">$5.00</h3>
+                </div>
+              </li>
+              <li class="product-card">
+                <img
+                  class="product-img"
+                  src="./assets/images/coffee-5.jpg"
+                  alt="Product"
+                />
+                <div class="product-info">
+                  <h2 class="product-title heading-3">Espresso</h2>
+                  <p class="product-description">Classic black coffee</p>
+                  <h3 class="product-price heading-3">$4.50</h3>
+                </div>
+              </li>
+              <li class="product-card">
+                <img
+                  class="product-img"
+                  src="./assets/images/coffee-6.jpg"
+                  alt="Product"
+                />
+                <div class="product-info">
+                  <h2 class="product-title heading-3">Latte</h2>
+                  <p class="product-description">
+                    Espresso coffee with the addition of steamed milk and dense
+                    milk foam
+                  </p>
+                  <h3 class="product-price heading-3">$5.50</h3>
+                </div>
+              </li>
+              <li class="product-card">
+                <img
+                  class="product-img"
+                  src="./assets/images/coffee-7.jpg"
+                  alt="Product"
+                />
+                <div class="product-info">
+                  <h2 class="product-title heading-3">Latte macchiato</h2>
+                  <p class="product-description">
+                    Espresso with frothed milk and chocolate
+                  </p>
+                  <h3 class="product-price heading-3">$5.50</h3>
+                </div>
+              </li>
+              <li class="product-card">
+                <img
+                  class="product-img"
+                  src="./assets/images/coffee-8.jpg"
+                  alt="Product"
+                />
+                <div class="product-info">
+                  <h2 class="product-title heading-3">Coffee with cognac</h2>
+                  <p class="product-description">
+                    Fragrant black coffee with cognac and whipped cream
+                  </p>
+                  <h3 class="product-price heading-3">$6.50</h3>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <button class="button menu-more-products-btn">
+            <span class="menu-tab-text">More products</span>
+          </button>
+        </section>
+      </main>
+      <footer id="contact-us">
+        <div class="slogan-link-container">
+          <div class="slogan">
+            <h2 class="heading-2">
+              Sip, Savor, Smile.<br />
+              <span class="accent">It’s coffee time!</span>
+            </h2>
+          </div>
+          <div>
+            <ul class="social-link-list">
+              <li class="social-link-item">
+                <a class="social-link" href="https://x.com" target="_blank">
+                  <img
+                    class="svg social-link-img"
+                    src="./assets/icons/twitter.svg"
+                    alt="Twitter"
+                  />
+                </a>
+              </li>
+              <li class="social-link-item">
+                <a
+                  class="social-link"
+                  href="https://www.instagram.com"
+                  target="_blank"
+                >
+                  <img
+                    class="svg social-link-img"
+                    src="./assets/icons/instagram.svg"
+                    alt="Instagram"
+                  />
+                </a>
+              </li>
+              <li class="social-link-item">
+                <a
+                  class="social-link"
+                  href="https://www.facebook.com"
+                  target="_blank"
+                >
+                  <img
+                    class="svg social-link-img"
+                    src="./assets/icons/facebook.svg"
+                    alt="Facebook"
+                  />
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="contacts">
+          <h3 class="contacts-header heading-3">Contact us</h3>
+          <ul class="contact-list">
+            <li class="contact-item">
+              <a
+                class="link contact-item contact-link"
+                href="https://www.google.com/maps"
+                target="_blank"
+              >
+                <img
+                  class="svg contact-item-icon"
+                  src="./assets/icons/pin-alt.svg"
+                  alt="Location"
+                />
+                <p>8558 Green Rd., LA</p>
+              </a>
+            </li>
+            <li>
+              <a class="link contact-item contact-link" href="tel:">
+                <img
+                  class="svg contact-item-icon"
+                  src="./assets/icons/phone.svg"
+                  alt="Phone"
+                />
+                <p>+1 (603) 555-0123</p>
+              </a>
+            </li>
+            <li class="link contact-item">
+              <img
+                class="svg contact-item-icon"
+                src="./assets/icons/clock.svg"
+                alt="Clock"
+              />
+              <p>Mon–Sat: 9:00–23:00</p>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
