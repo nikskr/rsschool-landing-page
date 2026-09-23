@@ -16,58 +16,94 @@
   <body>
     <div class="wrapper">
       <header>
-        <a class="logo" href="./index.html"></a>
-        <nav>
-          <ul>
-            <li>
-              <a class="link nav-link" href="./index.html#favorite-coffee"
-                >Favorite coffee</a
-              >
-            </li>
-            <li>
-              <a class="link nav-link" href="./index.html#about">About</a>
-            </li>
-            <li>
-              <a class="link nav-link" href="./index.html#mobile-app"
-                >Mobile app</a
-              >
-            </li>
-            <li><a class="link nav-link" href="#contact-us">Contact us</a></li>
-          </ul>
-        </nav>
-        <button id="toggle-theme-btn" class="light-mode-switch">
-          <span class="mode-btn light-mode">
+        <div class="header-wrapper">
+          <a class="logo" href="./index.html"></a>
+          <nav>
+            <ul>
+              <li>
+                <a class="link nav-link" href="./index.html#favorite-coffee"
+                  >Favorite coffee</a
+                >
+              </li>
+              <li>
+                <a class="link nav-link" href="./index.html#about">About</a>
+              </li>
+              <li>
+                <a class="link nav-link" href="./index.html#mobile-app"
+                  >Mobile app</a
+                >
+              </li>
+              <li>
+                <a class="link nav-link" href="#contact-us">Contact us</a>
+              </li>
+            </ul>
+          </nav>
+          <button id="toggle-theme-btn" class="light-mode-switch">
+            <span class="mode-btn light-mode">
+              <img
+                class="svg light-img"
+                src="./assets/icons/sun.svg"
+                alt="Light-mode"
+              />
+            </span>
+            <span class="mode-btn dark-mode">
+              <img
+                class="svg moon-img"
+                src="./assets/icons/moon.svg"
+                alt="Dark-mode"
+              />
+            </span>
+          </button>
+          <div class="menu-item">
+            <a class="link menu-link" href="./menu.html">
+              <span>Menu</span>
+              <img
+                class="menu-item-icon"
+                src="./assets/icons/coffee-cup.svg"
+                alt="Coffe-icon"
+              />
+            </a>
+          </div>
+          <button id="burger-btn">
             <img
-              class="svg light-img"
-              src="./assets/icons/sun.svg"
-              alt="Light-mode"
+              class="burger-menu-img"
+              src="./assets/icons/burger-menu.svg"
+              alt="Burger-menu"
             />
-          </span>
-          <span class="mode-btn dark-mode">
-            <img
-              class="svg moon-img"
-              src="./assets/icons/moon.svg"
-              alt="Dark-mode"
-            />
-          </span>
-        </button>
-        <div class="menu-item">
-          <a class="link menu-link" href="./menu.html">
-            <span>Menu</span>
-            <img
-              class="menu-item-icon"
-              src="./assets/icons/coffee-cup.svg"
-              alt="Coffe-icon"
-            />
-          </a>
+          </button>
         </div>
-        <button id="burger">
-          <img
-            class="burger-menu-img"
-            src="./assets/icons/burger-menu.svg"
-            alt="Burger-menu"
-          />
-        </button>
+        <div class="burger-menu inactive">
+          <nav>
+            <ul>
+              <li>
+                <a class="link nav-link" href="./index.html#favorite-coffee"
+                  >Favorite coffee</a
+                >
+              </li>
+              <li>
+                <a class="link nav-link" href="./index.html#about">About</a>
+              </li>
+              <li>
+                <a class="link nav-link" href="./index.html#mobile-app"
+                  >Mobile app</a
+                >
+              </li>
+              <li>
+                <a class="link nav-link" href="#contact-us">Contact us</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="menu-item">
+            <a class="link menu-link" href="./menu.html">
+              <span>Menu</span>
+              <img
+                class="menu-item-icon"
+                src="./assets/icons/coffee-cup.svg"
+                alt="Coffe-icon"
+              />
+            </a>
+          </div>
+        </div>
       </header>
       <main>
         <section>

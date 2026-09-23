@@ -16,52 +16,86 @@
   <body>
     <div class="wrapper">
       <header>
-        <a class="logo" href="./index.html"></a>
-        <nav>
-          <ul>
-            <li>
-              <a class="link nav-link" href="#favorite-coffee"
-                >Favorite coffee</a
-              >
-            </li>
-            <li><a class="link nav-link" href="#about">About</a></li>
-            <li><a class="link nav-link" href="#mobile-app">Mobile app</a></li>
-            <li><a class="link nav-link" href="#contact-us">Contact us</a></li>
-          </ul>
-        </nav>
-        <button id="toggle-theme-btn" class="light-mode-switch">
-          <span class="mode-btn light-mode">
+        <div class="header-wrapper">
+          <a class="logo" href="./index.html"></a>
+          <nav>
+            <ul>
+              <li>
+                <a class="link nav-link" href="#favorite-coffee"
+                  >Favorite coffee</a
+                >
+              </li>
+              <li><a class="link nav-link" href="#about">About</a></li>
+              <li>
+                <a class="link nav-link" href="#mobile-app">Mobile app</a>
+              </li>
+              <li>
+                <a class="link nav-link" href="#contact-us">Contact us</a>
+              </li>
+            </ul>
+          </nav>
+          <button id="toggle-theme-btn" class="light-mode-switch">
+            <span class="mode-btn light-mode">
+              <img
+                class="svg light-img"
+                src="./assets/icons/sun.svg"
+                alt="Light-mode"
+              />
+            </span>
+            <span class="mode-btn dark-mode">
+              <img
+                class="svg moon-img"
+                src="./assets/icons/moon.svg"
+                alt="Dark-mode"
+              />
+            </span>
+          </button>
+          <div class="menu-item">
+            <a class="link menu-link" href="./menu.html">
+              <span>Menu</span>
+              <img
+                class="menu-item-icon"
+                src="./assets/icons/coffee-cup.svg"
+                alt="Coffe-icon"
+              />
+            </a>
+          </div>
+          <button id="burger-btn">
             <img
-              class="svg light-img"
-              src="./assets/icons/sun.svg"
-              alt="Light-mode"
+              class="svg burger-menu-img"
+              src="./assets/icons/burger-menu.svg"
+              alt="Burger-menu"
             />
-          </span>
-          <span class="mode-btn dark-mode">
-            <img
-              class="svg moon-img"
-              src="./assets/icons/moon.svg"
-              alt="Dark-mode"
-            />
-          </span>
-        </button>
-        <div class="menu-item">
-          <a class="link menu-link" href="./menu.html">
-            <span>Menu</span>
-            <img
-              class="menu-item-icon"
-              src="./assets/icons/coffee-cup.svg"
-              alt="Coffe-icon"
-            />
-          </a>
+          </button>
         </div>
-        <button id="burger">
-          <img
-            class="burger-menu-img"
-            src="./assets/icons/burger-menu.svg"
-            alt="Burger-menu"
-          />
-        </button>
+        <div class="burger-menu inactive">
+          <nav>
+            <ul>
+              <li>
+                <a class="link nav-link" href="#favorite-coffee"
+                  >Favorite coffee</a
+                >
+              </li>
+              <li><a class="link nav-link" href="#about">About</a></li>
+              <li>
+                <a class="link nav-link" href="#mobile-app">Mobile app</a>
+              </li>
+              <li>
+                <a class="link nav-link" href="#contact-us">Contact us</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="menu-item">
+            <a class="link menu-link" href="./menu.html">
+              <span>Menu</span>
+              <img
+                class="svg menu-item-icon"
+                src="./assets/icons/coffee-cup.svg"
+                alt="Coffe-icon"
+              />
+            </a>
+          </div>
+        </div>
       </header>
       <main>
         <section class="hero-section">
@@ -96,7 +130,7 @@
           <div class="slider-container">
             <div class="slider">
               <div>
-                <button class="button slider-btn">
+                <button class="button slider-btn slider-prev-btn">
                   <img
                     class="svg slider-arrow-img"
                     src="./assets/icons/arrow-left.svg"
@@ -104,34 +138,14 @@
                   />
                 </button>
               </div>
-              <div class="slides-container">
-                <!-- <div class="slide">
-                  <img class="slide-img" src="" alt="Coffee" />
-                  <h3 class="heading-3">S`mores Frappuccino</h3>
-                  <p>
-                    This new drink takes an espresso and mixes it with brown
-                    sugar and cinnamon before being topped with oat milk.
-                  </p>
-                  <h3 class="heading-3">$5.50</h3>
-                </div> -->
-                <div class="slide active">
-                  <img src="./assets/images/coffee-slider-1.png" alt="Coffee" />
-                  <h3 class="heading-3">S`mores Frappuccino</h3>
-                  <p>
-                    This new drink takes an espresso and mixes it with brown
-                    sugar and cinnamon before being topped with oat milk.
-                  </p>
-                  <h3 class="heading-3">$5.50</h3>
-                </div>
-                <!-- <div class="slide">
-                  <img src="" alt="Coffee" />
-                  <h3 class="heading-3">Coffe name</h3>
-                  <p>Description</p>
-                  <h3 class="heading-3">Price</h3>
-                </div> -->
+              <div class="slide">
+                <img id="slide-img" alt="Slider-product" />
+                <h3 id="slide-title" class="heading-3"></h3>
+                <p id="slide-description"></p>
+                <h3 id="slide-price" class="heading-3"></h3>
               </div>
               <div class="slider-btn-container">
-                <button class="button slider-btn">
+                <button class="button slider-btn slider-next-btn">
                   <img
                     class="svg slider-arrow-img"
                     src="./assets/icons/arrow-right.svg"
@@ -140,11 +154,7 @@
                 </button>
               </div>
             </div>
-            <div class="slider-pagination">
-              <div class="dash active"></div>
-              <div class="dash"></div>
-              <div class="dash"></div>
-            </div>
+            <div class="slider-pagination"></div>
           </div>
         </section>
         <section id="about">
