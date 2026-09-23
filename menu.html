@@ -66,7 +66,7 @@
           </div>
           <button id="burger-btn">
             <img
-              class="burger-menu-img"
+              class="svg burger-menu-img"
               src="./assets/icons/burger-menu.svg"
               alt="Burger-menu"
             />
@@ -76,17 +76,13 @@
           <nav>
             <ul>
               <li>
-                <a class="link nav-link" href="./index.html#favorite-coffee"
+                <a class="link nav-link" href="#favorite-coffee"
                   >Favorite coffee</a
                 >
               </li>
+              <li><a class="link nav-link" href="#about">About</a></li>
               <li>
-                <a class="link nav-link" href="./index.html#about">About</a>
-              </li>
-              <li>
-                <a class="link nav-link" href="./index.html#mobile-app"
-                  >Mobile app</a
-                >
+                <a class="link nav-link" href="#mobile-app">Mobile app</a>
               </li>
               <li>
                 <a class="link nav-link" href="#contact-us">Contact us</a>
@@ -97,7 +93,7 @@
             <a class="link menu-link" href="./menu.html">
               <span>Menu</span>
               <img
-                class="menu-item-icon"
+                class="svg menu-item-icon"
                 src="./assets/icons/coffee-cup.svg"
                 alt="Coffe-icon"
               />
@@ -115,7 +111,7 @@
           <div>
             <ul class="tabs-list">
               <li>
-                <button class="button menu-tab-btn active">
+                <button id="coffee" class="button menu-tab-btn active">
                   <span class="menu-tab-icon-wrapper">
                     <img
                       class="menu-tab-icon"
@@ -127,7 +123,7 @@
                 </button>
               </li>
               <li>
-                <button class="button menu-tab-btn">
+                <button id="tea" class="button menu-tab-btn">
                   <span class="menu-tab-icon-wrapper">
                     <img
                       class="menu-tab-icon"
@@ -139,7 +135,7 @@
                 </button>
               </li>
               <li>
-                <button class="button menu-tab-btn">
+                <button id="dessert" class="button menu-tab-btn">
                   <span class="menu-tab-icon-wrapper">
                     <img
                       class="menu-tab-icon"
@@ -153,121 +149,7 @@
             </ul>
           </div>
           <div class="products-container">
-            <ul class="products-list">
-              <li class="product-card">
-                <img
-                  class="product-img"
-                  src="./assets/images/coffee-1.jpg"
-                  alt="Product"
-                />
-                <div class="product-info">
-                  <h2 class="product-title">Irish coffee</h2>
-                  <p class="product-description">
-                    Fragrant black coffee with Jameson Irish whiskey and whipped
-                    milk
-                  </p>
-                  <h2 class="product-price">$7.00</h2>
-                </div>
-              </li>
-              <li class="product-card">
-                <img
-                  class="product-img"
-                  src="./assets/images/coffee-2.jpg"
-                  alt="Product"
-                />
-                <div class="product-info">
-                  <h2 class="product-title heading-3">Kahlua coffee</h2>
-                  <p class="product-description">
-                    Classic coffee with milk and Kahlua liqueur under a cap of
-                    frothed milk
-                  </p>
-                  <h3 class="product-price heading-3">$7.00</h3>
-                </div>
-              </li>
-              <li class="product-card">
-                <img
-                  class="product-img"
-                  src="./assets/images/coffee-3.jpg"
-                  alt="Product"
-                />
-                <div class="product-info">
-                  <h2 class="product-title heading-3">Honey raf</h2>
-                  <p class="product-description">
-                    Espresso with frothed milk, cream and aromatic honey
-                  </p>
-                  <h3 class="product-price heading-3">$5.50</h3>
-                </div>
-              </li>
-              <li class="product-card">
-                <img
-                  class="product-img"
-                  src="./assets/images/coffee-4.jpg"
-                  alt="Product"
-                />
-                <div class="product-info">
-                  <h2 class="product-title heading-3">Ice cappuccino</h2>
-                  <p class="product-description">
-                    Cappuccino with soft thick foam in summer version with ice
-                  </p>
-                  <h3 class="product-price heading-3">$5.00</h3>
-                </div>
-              </li>
-              <li class="product-card">
-                <img
-                  class="product-img"
-                  src="./assets/images/coffee-5.jpg"
-                  alt="Product"
-                />
-                <div class="product-info">
-                  <h2 class="product-title heading-3">Espresso</h2>
-                  <p class="product-description">Classic black coffee</p>
-                  <h3 class="product-price heading-3">$4.50</h3>
-                </div>
-              </li>
-              <li class="product-card">
-                <img
-                  class="product-img"
-                  src="./assets/images/coffee-6.jpg"
-                  alt="Product"
-                />
-                <div class="product-info">
-                  <h2 class="product-title heading-3">Latte</h2>
-                  <p class="product-description">
-                    Espresso coffee with the addition of steamed milk and dense
-                    milk foam
-                  </p>
-                  <h3 class="product-price heading-3">$5.50</h3>
-                </div>
-              </li>
-              <li class="product-card">
-                <img
-                  class="product-img"
-                  src="./assets/images/coffee-7.jpg"
-                  alt="Product"
-                />
-                <div class="product-info">
-                  <h2 class="product-title heading-3">Latte macchiato</h2>
-                  <p class="product-description">
-                    Espresso with frothed milk and chocolate
-                  </p>
-                  <h3 class="product-price heading-3">$5.50</h3>
-                </div>
-              </li>
-              <li class="product-card">
-                <img
-                  class="product-img"
-                  src="./assets/images/coffee-8.jpg"
-                  alt="Product"
-                />
-                <div class="product-info">
-                  <h2 class="product-title heading-3">Coffee with cognac</h2>
-                  <p class="product-description">
-                    Fragrant black coffee with cognac and whipped cream
-                  </p>
-                  <h3 class="product-price heading-3">$6.50</h3>
-                </div>
-              </li>
-            </ul>
+            <ul class="products-list"></ul>
           </div>
           <button class="button menu-more-products-btn">
             <span class="menu-tab-text">More products</span>
@@ -362,5 +244,6 @@
       </footer>
     </div>
     <script src="script.js"></script>
+    <script src="menu.js"></script>
   </body>
 </html>

@@ -122,6 +122,10 @@ img {
 
 /* STYLES */
 
+.no-scroll {
+  overflow: hidden;
+}
+
 body {
   color: var(--text-primary-color);
   border-color: var(--border-primary-color);
@@ -141,7 +145,7 @@ header {
 }
 
 header.burger-menu-active {
-  min-height: 100dvh;
+  height: 100dvh;
 }
 
 .header-wrapper {
@@ -430,11 +434,6 @@ section {
   margin: 0 auto;
 }
 
-.slider-img {
-  max-width: 480px;
-  width: 100%;
-}
-
 .slider-btn {
   max-width: 60px;
   width: 100%;
@@ -472,6 +471,7 @@ section {
 
 #slide-img {
   max-width: 480px;
+  min-width: 150px;
   width: 100%;
 }
 
@@ -582,6 +582,7 @@ html.dark .download-link-icon {
 .download-img {
   max-width: 630px;
   width: 100%;
+  border-radius: 40px;
 }
 
 footer {
