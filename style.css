@@ -451,7 +451,8 @@ section {
 
 .slider-btn:hover,
 .download-link:hover,
-#burger-btn:hover {
+#burger-btn:hover,
+#rest-btn:hover {
   cursor: pointer;
   color: var(--text-inverse-color);
   background-color: var(--background-container-color);
@@ -459,9 +460,15 @@ section {
 
 .slider-btn:hover > .slider-arrow-img,
 .download-link:hover > .download-link-icon,
-#burger-btn:hover > .burger-menu-img {
+#burger-btn:hover > .burger-menu-img,
+#rest-btn:hover > .rest-btn-img {
   filter: brightness(0) saturate(100%) invert(99%) sepia(80%) saturate(688%)
     hue-rotate(298deg) brightness(105%) contrast(76%);
+}
+
+.rest-btn-img {
+  width: 24px;
+  height: 24px;
 }
 
 .slider-arrow-img {
@@ -707,9 +714,36 @@ html.dark .social-link:hover > .social-link-img {
   display: none;
 }
 
+#modal.active {
+  position: fixed;
+  width: 100%;
+  min-height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-primary-color);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 40px;
+  background-color: var(--text-inverse-color);
+}
+
 .modal-content {
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 20px;
 }
 
@@ -717,6 +751,62 @@ html.dark .social-link:hover > .social-link-img {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+#modal-product-img {
+  max-width: 310px;
+  width: 100%;
+  align-self: flex-start;
+  border-radius: 40px;
+}
+
+.modal-params-name {
+  margin-bottom: 8px;
+}
+
+.modal-params-list {
+  display: flex;
+  gap: 8px;
+}
+
+.total-price-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-add-info {
+  display: flex;
+  gap: 12px;
+}
+
+.modal-add-info img {
+  width: 16px;
+  height: 16px;
+}
+
+.modal-params-badge {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-inverse-color);
+  background-color: var(--background-container-color);
+  border-radius: 50%;
+}
+
+.modal-params-item.active .modal-params-badge,
+.modal-params-item:hover .modal-params-badge {
+  color: var(--text-primary-color);
+  background-color: var(--background-page-color);
+}
+
+.modal-close-btn {
+  padding: 10px 0px;
+  color: var(--text-primary-color);
+  background-color: var(--background-page-color);
+  border: 1px solid var(--border-inverse-color);
+  border-radius: 100px;
 }
 
 .menu-header {
@@ -730,7 +820,8 @@ html.dark .social-link:hover > .social-link-img {
 }
 
 .menu-tab-btn,
-.menu-more-products-btn {
+.menu-more-products-btn.active,
+.modal-params-item {
   padding: 8px 16px 8px 8px;
   display: flex;
   align-items: center;
@@ -741,9 +832,13 @@ html.dark .social-link:hover > .social-link-img {
   background-color: inherit;
 }
 
-.menu-more-products-btn {
+.menu-more-products-btn.active {
   margin: 30px auto;
-  padding: 8px 16px;
+  padding: 24px;
+}
+
+.menu-more-products-btn {
+  display: none;
 }
 
 .menu-tab-icon-wrapper {
@@ -755,7 +850,9 @@ html.dark .social-link:hover > .social-link-img {
 .menu-tab-btn:hover,
 .menu-tab-btn.active,
 .product-card:hover,
-.menu-more-products-btn:hover {
+.modal-params-item.active,
+.modal-params-item:hover,
+.modal-close-btn:hover {
   cursor: pointer;
   color: var(--text-inverse-color);
   background-color: var(--background-container-color);

@@ -21,7 +21,7 @@ async function filterProductsByCategory(allProducts, selectedCategory) {
     );
     return filteredProducts;
   } catch (error) {
-    console.log(error.message);
+    throw new Error(error.message);
   }
 }
 
@@ -31,14 +31,25 @@ async function getFilteredByCategoryProducts(selectedCategory) {
     allProducts,
     selectedCategory,
   );
-  renderCards(filteredProducts);
+  return filteredProducts;
 }
 
 const productList = document.querySelector('.products-list');
 
-async function renderCards(products) {
-  console.log(products);
+const modalOverlay = document.getElementById('modal');
+
+function renderCards(products, isForMobileInitialProducts) {
+  productList.innerHTML = '';
+
+  if (products.length > 4 && isForMobileInitialProducts) {
+    renderRestProductsBtn(true);
+  } else {
+    renderRestProductsBtn(false);
+  }
+
   products.forEach((product, index) => {
+    if (isForMobileInitialProducts && index >= 4) return;
+
     const productCard = document.createElement('li');
     productCard.classList.add('product-card');
 
@@ -72,23 +83,208 @@ async function renderCards(products) {
 
     productCard.appendChild(productInfoContainer);
 
+    productCard.addEventListener('click', () => {
+      openModal(product, index);
+    });
+
     productList.appendChild(productCard);
   });
 }
 
-console.log(123);
+async function renderFilteredProductCards(
+  category,
+  isForMobileInitialProducts,
+) {
+  const products = await getFilteredByCategoryProducts(category);
+  renderCards(products, isForMobileInitialProducts);
+}
 
-getFilteredByCategoryProducts('coffee');
+const initialCategory = 'coffee';
+
+renderFilteredProductCards(initialCategory, isMobile.matches);
 
 const categoryBtns = document.querySelectorAll('.menu-tab-btn');
 
-console.log(categoryBtns);
+function toggleActiveBtnStyle(btnId) {
+  categoryBtns.forEach((btn) => {
+    if (btn.id !== btnId) {
+      btn.classList.remove('active');
+    } else {
+      btn.classList.add('active');
+    }
+  });
+}
 
-categoryBtns.forEach((btn, i) => {
+categoryBtns.forEach((btn) => {
   btn.addEventListener('click', () => {
-    console.log(btn.id);
-    getFilteredByCategoryProducts(btn.id);
+    toggleActiveBtnStyle(btn.id);
+    renderFilteredProductCards(btn.id, isMobile.matches);
   });
 });
 
-// TO FIX
+const restProductsBtn = document.getElementById('rest-btn');
+
+restProductsBtn.addEventListener('click', () => {
+  const currentCategory = document.querySelector('.menu-tab-btn.active').id;
+  renderFilteredProductCards(currentCategory, false);
+});
+
+function renderRestProductsBtn(isRendered) {
+  if (isRendered) {
+    restProductsBtn.classList.add('active');
+  } else {
+    restProductsBtn.classList.remove('active');
+  }
+}
+
+isMobile.addEventListener('change', (e) => {
+  const currentCategory = document.querySelector('.menu-tab-btn.active').id;
+  if (e.matches) {
+    renderFilteredProductCards(currentCategory, true);
+  } else {
+    renderFilteredProductCards(currentCategory, false);
+  }
+});
+
+// ==================== MODAL ====================
+
+const closeModalBtn = document.getElementById('modal-close-btn');
+
+closeModalBtn.addEventListener('click', () => {
+  closeModal();
+});
+
+modalOverlay.addEventListener('click', () => {
+  closeModal();
+});
+
+const modalContainer = document.querySelector('.modal-container');
+
+modalContainer.addEventListener('click', (e) => {
+  e.stopPropagation();
+});
+
+const sizeListElement = document.getElementById(`modal-product-sizes-list`);
+const additivesListElement = document.getElementById(
+  `modal-product-additives-list`,
+);
+
+let totalPrice = 0;
+
+function handleActiveSize(sizeKey, product) {
+  const activeSizeEl = sizeListElement.querySelector(
+    '.modal-params-item.active',
+  );
+  totalPrice -= Number(product.sizes[activeSizeEl.id]['add-price']);
+  activeSizeEl.classList.remove('active');
+
+  const newActiveSizeEl = sizeListElement.querySelector(
+    `.modal-params-item#${sizeKey}`,
+  );
+  totalPrice += Number(product.sizes[sizeKey]['add-price']);
+  newActiveSizeEl.classList.add('active');
+
+  priceElement.textContent = `$${totalPrice.toFixed(2)}`;
+}
+
+function handleActiveAdditive(additiveName, additivePrice) {
+  const additiveItemEl = additivesListElement.querySelector(`#${additiveName}`);
+  if (additiveItemEl.classList.contains('active')) {
+    additiveItemEl.classList.remove('active');
+    totalPrice -= Number(additivePrice);
+    priceElement.textContent = `$${totalPrice.toFixed(2)}`;
+  } else {
+    additiveItemEl.classList.add('active');
+    totalPrice += Number(additivePrice);
+    priceElement.textContent = `$${totalPrice.toFixed(2)}`;
+  }
+}
+
+function fillSizeParamList(product) {
+  for (const [key, value] of Object.entries(product.sizes)) {
+    const paramsItemElement = document.createElement('li');
+    paramsItemElement.classList.add('modal-params-item');
+    paramsItemElement.id = key;
+    if (sizeListElement.querySelectorAll('.modal-params-item').length === 0) {
+      paramsItemElement.classList.add('active');
+    }
+
+    const paramsBadgeElement = document.createElement('div');
+    paramsBadgeElement.classList.add('modal-params-badge');
+    paramsBadgeElement.textContent = String(key).toUpperCase();
+
+    paramsItemElement.appendChild(paramsBadgeElement);
+
+    const paramsTextElement = document.createElement('div');
+    paramsTextElement.classList.add('modal-params-text');
+    paramsTextElement.textContent = value.size;
+
+    paramsItemElement.appendChild(paramsTextElement);
+
+    paramsItemElement.addEventListener('click', () => {
+      handleActiveSize(key, product);
+    });
+
+    sizeListElement.appendChild(paramsItemElement);
+  }
+}
+
+function filladditivesParamList(product) {
+  product.additives.forEach((additive, i) => {
+    const paramsItemElement = document.createElement('li');
+    paramsItemElement.classList.add('modal-params-item');
+    paramsItemElement.id = additive.name;
+
+    const paramsBadgeElement = document.createElement('div');
+    paramsBadgeElement.classList.add('modal-params-badge');
+    paramsBadgeElement.textContent = i + 1;
+
+    paramsItemElement.appendChild(paramsBadgeElement);
+
+    const paramsTextElement = document.createElement('div');
+    paramsTextElement.classList.add('modal-params-text');
+    paramsTextElement.textContent = additive.name;
+
+    paramsItemElement.appendChild(paramsTextElement);
+
+    paramsItemElement.addEventListener('click', () => {
+      handleActiveAdditive(additive.name, additive['add-price']);
+    });
+
+    additivesListElement.appendChild(paramsItemElement);
+  });
+}
+
+const priceElement = document.getElementById('modal-total-price');
+
+function fillModalInfo(product, index) {
+  const imgElement = document.getElementById('modal-product-img');
+  imgElement.src = `./assets/images/${product.category}-${index + 1}.jpg`;
+
+  const titleElement = document.getElementById('modal-product-title');
+  titleElement.textContent = product.name;
+
+  const descriptionElement = document.getElementById(
+    'modal-product-description',
+  );
+  descriptionElement.textContent = product.description;
+
+  fillSizeParamList(product);
+  filladditivesParamList(product);
+
+  totalPrice = Number(product.price);
+  priceElement.textContent = `$${product.price}`;
+}
+
+function openModal(product, productIndex) {
+  modalOverlay.classList.add('active');
+  fillModalInfo(product, productIndex);
+  // htmlElement.classList.add('no-scroll');
+}
+
+function closeModal() {
+  sizeListElement.innerHTML = '';
+  additivesListElement.innerHTML = '';
+  modalOverlay.classList.remove('active');
+  htmlElement.classList.remove('no-scroll');
+}

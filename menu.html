@@ -151,8 +151,12 @@
           <div class="products-container">
             <ul class="products-list"></ul>
           </div>
-          <button class="button menu-more-products-btn">
-            <span class="menu-tab-text">More products</span>
+          <button id="rest-btn" class="button menu-more-products-btn">
+            <img
+              class="svg rest-btn-img"
+              src="./assets/icons/refresh.svg"
+              alt="More-products"
+            />
           </button>
         </section>
       </main>
@@ -242,6 +246,74 @@
           </ul>
         </div>
       </footer>
+    </div>
+    <div id="modal">
+      <div class="modal-container">
+        <div class="modal-content">
+          <img
+            id="modal-product-img"
+            src="./assets/images/coffee-1.jpg"
+            alt="Product-image"
+          />
+          <div class="modal-product-info">
+            <h4 id="modal-product-title" class="heading-3">Title</h4>
+            <p id="modal-product-description">Description</p>
+            <div class="product-size">
+              <p class="modal-params-name">Size</p>
+              <ul id="modal-product-sizes-list" class="modal-params-list">
+                <!-- <li class="modal-params-item active">
+                  <div class="modal-params-badge">S</div>
+                  <div class="modal-params-text">200 ml</div>
+                </li>
+                <li class="modal-params-item">
+                  <div class="modal-params-badge">M</div>
+                  <div class="modal-params-text">sugar</div>
+                </li>
+                <li class="modal-params-item">
+                  <div class="modal-params-badge">S</div>
+                  <div class="modal-params-text">sugar</div>
+                </li> -->
+              </ul>
+            </div>
+            <div class="modal-product-additives-list">
+              <p class="modal-params-name">Additives</p>
+              <ul id="modal-product-additives-list" class="modal-params-list">
+                <!-- <li class="modal-params-item active">
+                  <div class="modal-params-badge">S</div>
+                  <div class="modal-params-text">sugar</div>
+                </li>
+                <li class="modal-params-item">
+                  <div class="modal-params-badge">S</div>
+                  <div class="modal-params-text">sugar</div>
+                </li>
+                <li class="modal-params-item">
+                  <div class="modal-params-badge">S</div>
+                  <div class="modal-params-text">sugar</div>
+                </li> -->
+              </ul>
+            </div>
+            <div class="total-price-container">
+              <h3 class="heading-3">Total:</h3>
+              <h3 id="modal-total-price" class="heading-3">Price</h3>
+            </div>
+            <hr />
+            <div class="modal-add-info">
+              <div>
+                <img class="svg" src="./assets/icons/info-empty.svg" alt="" />
+              </div>
+              <p class="caption">
+                The cost is not final. Download our mobile app to see the final
+                price and place your order. Earn loyalty points and enjoy your
+                favorite coffee with up to 20% discount.
+              </p>
+            </div>
+
+            <button id="modal-close-btn" class="button modal-close-btn">
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="script.js"></script>
     <script src="menu.js"></script>

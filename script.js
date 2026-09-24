@@ -55,15 +55,15 @@ function closeBurgerMenu() {
   burgerBtnImg.src = './assets/icons/burger-menu.svg';
 }
 
-const isNotMobile = window.matchMedia('(min-width: 769px)');
+const isMobile = window.matchMedia('(max-width: 768px)');
 
-function closeBurgerMenuByChangeScreen(e) {
-  if (e.matches) {
+function handleMobileScreenWidthChange(e) {
+  if (!e.matches) {
     closeBurgerMenu();
   }
 }
 
-isNotMobile.addEventListener('change', closeBurgerMenuByChangeScreen);
+isMobile.addEventListener('change', handleMobileScreenWidthChange);
 
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
