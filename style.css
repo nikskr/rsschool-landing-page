@@ -19,6 +19,7 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 html.dark {
@@ -716,11 +717,11 @@ html.dark .social-link:hover > .social-link-img {
 
 #modal.active {
   position: fixed;
-  width: 100%;
-  min-height: 100vh;
   top: 0;
   left: 0;
-  z-index: 5;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -730,7 +731,6 @@ html.dark .social-link:hover > .social-link-img {
 
 .modal-container {
   max-width: 800px;
-  margin: 0 auto;
   padding: 16px;
   display: flex;
   justify-content: center;
@@ -741,13 +741,12 @@ html.dark .social-link:hover > .social-link-img {
 
 .modal-content {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
   gap: 20px;
 }
 
 .modal-product-info {
+  max-width: 440px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -766,6 +765,7 @@ html.dark .social-link:hover > .social-link-img {
 
 .modal-params-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
@@ -948,5 +948,19 @@ html.dark .social-link:hover > .social-link-img {
 
   footer {
     padding: 100px 60px;
+  }
+
+  .modal-container {
+    margin: auto 40px;
+  }
+
+  #modal-product-img {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 576px) {
+  #modal-product-img {
+    display: none;
   }
 }

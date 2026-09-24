@@ -279,7 +279,7 @@ function fillModalInfo(product, index) {
 function openModal(product, productIndex) {
   modalOverlay.classList.add('active');
   fillModalInfo(product, productIndex);
-  // htmlElement.classList.add('no-scroll');
+  htmlElement.classList.add('no-scroll');
 }
 
 function closeModal() {
