@@ -736,7 +736,7 @@ html.dark .social-link:hover > .social-link-img {
   justify-content: center;
   gap: 20px;
   border-radius: 40px;
-  background-color: var(--text-inverse-color);
+  background-color: var(--background-page-color);
 }
 
 .modal-content {
