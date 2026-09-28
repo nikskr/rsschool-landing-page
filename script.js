@@ -21,6 +21,8 @@ toggleBtn.addEventListener('click', () => {
 
 // ==================== BURGER MENU ====================
 
+const isMobile = window.matchMedia('(max-width: 768px)');
+
 const burgerBtn = document.getElementById('burger-btn');
 const headerElement = document.querySelector('header');
 const burgerMenu = document.querySelector('.burger-menu');
@@ -65,8 +67,6 @@ function closeBurgerMenu() {
   burgerMenu.classList.add('inactive');
   toggleBurgerBtnSvg();
 }
-
-const isMobile = window.matchMedia('(max-width: 768px)');
 
 function handleMobileScreenWidthChange(e) {
   if (!e.matches) {
