@@ -24,17 +24,22 @@ toggleBtn.addEventListener('click', () => {
 const burgerBtn = document.getElementById('burger-btn');
 const headerElement = document.querySelector('header');
 const burgerMenu = document.querySelector('.burger-menu');
-const burgerBtnImg = document.querySelector('.burger-menu-img');
+const burgerBtnSvg = document.getElementById('burger-icon');
 
-burgerBtn.addEventListener('click', () => {
-  htmlElement.classList.toggle('no-scroll');
-  headerElement.classList.toggle('burger-menu-active');
-  burgerMenu.classList.toggle('inactive');
-
+function toggleBurgerBtnSvg() {
   if (burgerMenu.classList.contains('inactive')) {
-    burgerBtnImg.src = './assets/icons/burger-menu.svg';
+    burgerBtnSvg.innerHTML = `<path d="M0.75 0.75H16.75" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M0.75 8.75H16.75" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`;
+    burgerBtnSvg.setAttribute('width', '18');
+    burgerBtnSvg.setAttribute('height', '10');
+    burgerBtnSvg.setAttribute('viewBox', '0 0 18 10');
   } else {
-    burgerBtnImg.src = './assets/icons/close.svg';
+    burgerBtnSvg.innerHTML = `<path d="M0.75 0.75L12.0637 12.0637" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M0.75 12.0637L12.0637 0.750013" stroke="#403F3D" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`;
+    burgerBtnSvg.setAttribute('width', '13');
+    burgerBtnSvg.setAttribute('height', '13');
+    burgerBtnSvg.setAttribute('viewBox', '0 0 13 13');
+
     const allHeaderLinks = document.querySelectorAll(
       'header.burger-menu-active a',
     );
@@ -45,13 +50,20 @@ burgerBtn.addEventListener('click', () => {
       });
     });
   }
+}
+
+burgerBtn.addEventListener('click', () => {
+  htmlElement.classList.toggle('no-scroll');
+  headerElement.classList.toggle('burger-menu-active');
+  burgerMenu.classList.toggle('inactive');
+  toggleBurgerBtnSvg();
 });
 
 function closeBurgerMenu() {
   htmlElement.classList.remove('no-scroll');
   headerElement.classList.remove('burger-menu-active');
   burgerMenu.classList.add('inactive');
-  burgerBtnImg.src = './assets/icons/burger-menu.svg';
+  toggleBurgerBtnSvg();
 }
 
 const isMobile = window.matchMedia('(max-width: 768px)');

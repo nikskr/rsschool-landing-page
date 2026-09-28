@@ -288,3 +288,9 @@ function closeModal() {
   modalOverlay.classList.remove('active');
   htmlElement.classList.remove('no-scroll');
 }
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeModal();
+  }
+});
