@@ -41,7 +41,6 @@ burgerBtn.addEventListener('click', () => {
 
     allHeaderLinks.forEach((link) => {
       link.addEventListener('click', () => {
-        console.log('LINK CLICKED!');
         closeBurgerMenu();
       });
     });
